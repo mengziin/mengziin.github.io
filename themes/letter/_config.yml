@@ -1,0 +1,6 @@
+# 信纸主题配置
+signoff: 写给你的信
+nav:
+  - { name: 信件, link: / }
+  - { name: 归档, link: /archives/ }
+  - { name: 关于, link: /about/ }

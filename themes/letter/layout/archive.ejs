@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="archive-title">归档</h1>
+  <ul class="archive-list">
+    <% page.posts.forEach(function(post){ %>
+      <li>
+        <span class="ar-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></span>
+        <span class="ar-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+      </li>
+    <% }); %>
+  </ul>
+  <%- partial('partial/pagination') %>
+</div>

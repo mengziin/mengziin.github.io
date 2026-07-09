@@ -1,0 +1,15 @@
+<article class="letter">
+  <h1 class="entry-title"><%= page.title %></h1>
+  <div class="entry-meta"><%= date(page.date, 'YYYY年MM月DD日') %></div>
+  <div class="post-content">
+    <%- page.content %>
+  </div>
+  <nav class="post-nav">
+    <% if (page.prev){ %>
+      <a href="<%- url_for(page.prev.path) %>">&larr; <%= page.prev.title %></a>
+    <% } else { %><span></span><% } %>
+    <% if (page.next){ %>
+      <a href="<%- url_for(page.next.path) %>"><%= page.next.title %> &rarr;</a>
+    <% } %>
+  </nav>
+</article>

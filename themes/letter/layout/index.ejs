@@ -1,0 +1,8 @@
+<div class="container">
+  <ul class="post-list">
+    <% page.posts.forEach(function(post){ %>
+      <li><%- partial('partial/post-card', { post: post }) %></li>
+    <% }); %>
+  </ul>
+  <%- partial('partial/pagination') %>
+</div>

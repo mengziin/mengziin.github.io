@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<%- partial('partial/head') %>
+<body>
+  <div class="site">
+    <%- partial('partial/header') %>
+    <main class="site-main">
+      <%- body %>
+    </main>
+    <%- partial('partial/footer') %>
+  </div>
+  <%- partial('partial/theme-toggle') %>
+  <script src="<%- url_for('/js/theme.js') %>"></script>
+</body>
+</html>

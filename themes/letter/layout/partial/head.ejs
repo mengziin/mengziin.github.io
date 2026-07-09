@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hexo">
+  <% if (page.description || config.description){ %>
+  <meta name="description" content="<%= page.description || config.description %>">
+  <% } %>
+  <% if (config.keywords){ %>
+  <meta name="keywords" content="<%= config.keywords %>">
+  <% } %>
+  <title><%= page.title ? page.title + ' · ' + config.title : config.title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="<%- url_for('/fonts/lxgwwenkai-regular.css') %>">
+  <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+</head>

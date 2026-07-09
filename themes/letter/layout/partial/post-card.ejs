@@ -1,0 +1,5 @@
+<article class="post-card">
+  <h2 class="pc-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+  <div class="pc-meta"><%= date(post.date, 'YYYY年MM月DD日') %></div>
+  <p class="pc-excerpt"><%- strip_html(post.excerpt || post.content).substring(0, 120) %>…</p>
+</article>
