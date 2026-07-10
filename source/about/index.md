@@ -9,4 +9,4 @@ date: 2026-07-09
 
 每一篇都是一封没有邮戳的信，收件人是你。
 
-——Yumeng0628
+——[Yumeng0628](https://bio.link/yumeng0628)
