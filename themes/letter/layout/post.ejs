@@ -13,3 +13,13 @@
     <% } %>
   </nav>
 </article>
+
+<%# 信纸风分享卡片：元信息 + 资源（仅文章页加载） %>
+<script id="card-meta" type="application/json"
+  data-title="<%= page.title %>"
+  data-date="<%= date(page.date, 'YYYY年MM月DD日') %>"
+  data-url="<%= (config.url || '') + url_for(page.path) %>"
+  data-site="<%= config.title %>"></script>
+<link rel="stylesheet" href="<%- url_for('/css/card.css') %>">
+<script src="<%- url_for('/vendor/qrcode-generator.min.js') %>"></script>
+<script src="<%- url_for('/js/card.js') %>"></script>

@@ -1,0 +1,182 @@
+/* ============================================================
+   信纸风分享卡片 - 浮动按钮与弹层 (card.css)
+   复用 style.css 的 CSS 变量，与主题协调
+   ============================================================ */
+
+/* ---------- 浮动「生成卡片」按钮（桌面选区触发） ---------- */
+.card-fab {
+  position: fixed;
+  display: none;
+  z-index: 9998;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: .9rem;
+  letter-spacing: .05em;
+  padding: .5em 1.1em;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .15s ease, transform .1s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+.card-fab.visible { display: inline-block; }
+.card-fab:hover { border-color: var(--ink); transform: translateY(-1px); }
+.card-fab:active { transform: translateY(0); }
+
+/* ---------- 移动端底部「生成卡片」入口（iOS 选区菜单遮挡兜底） ---------- */
+.card-mobile-entry {
+  display: none;
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+.card-mobile-entry .card-mobile-btn {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: .95rem;
+  padding: .55em 1.4em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .15s ease;
+}
+.card-mobile-entry .card-mobile-btn:hover { border-color: var(--ink); }
+.card-mobile-entry .card-mobile-hint {
+  display: block;
+  margin-top: .6rem;
+  font-size: .8rem;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .card-mobile-entry { display: block; }
+}
+
+/* ---------- 预览 / 编辑弹层 ---------- */
+.card-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(58, 53, 46, .55);
+}
+.card-modal.open { display: flex; }
+
+.card-modal-inner {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .18);
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+.card-modal-close {
+  position: absolute;
+  top: .35rem;
+  right: .55rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: .25rem .5rem;
+}
+.card-modal-close:hover { color: var(--ink); }
+
+.card-modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+}
+
+/* 阶段切换：编辑 / 预览 */
+.card-stage { display: none; }
+.card-stage.active { display: block; }
+
+/* 编辑阶段 */
+.card-edit-text {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: .75rem .9rem;
+}
+.card-edit-text:focus { outline: none; border-color: var(--ink); }
+
+/* 预览阶段 */
+.card-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+.card-actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.card-btn {
+  flex: 1;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: .95rem;
+  padding: .6em 1em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.card-btn:hover { border-color: var(--ink); color: var(--ink); }
+.card-btn-primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.card-btn-primary:hover { color: #fff; opacity: .9; }
+
+.card-tip {
+  margin: .75rem 0 0;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.card-tip.desktop-only { display: block; }
+.card-tip.mobile-only { display: none; }
+@media (max-width: 640px) {
+  .card-tip.desktop-only { display: none; }
+  .card-tip.mobile-only { display: block; }
+}
+
+/* 移动端弹层内边距收紧 */
+@media (max-width: 640px) {
+  .card-modal { padding: .5rem; }
+  .card-modal-inner { padding: 1.5rem 1rem 1.25rem; }
+}
+
+/* 尊重减少动效 */
+@media (prefers-reduced-motion: reduce) {
+  .card-fab, .card-btn, .card-mobile-entry .card-mobile-btn { transition: none; }
+}
