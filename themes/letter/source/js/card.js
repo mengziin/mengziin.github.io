@@ -344,11 +344,6 @@
       ctx.fillRect(contentX - 24, ly, contentW + 48, 1);
     }
 
-    /* 5. 左侧墨蓝竖线（呼应 blockquote border-left） */
-    var decoH = Math.min(lines.length * lineH, contentMaxH);
-    ctx.fillStyle = C.ink;
-    ctx.fillRect(contentX - 28, contentTop, 3, decoH);
-
     /* 6. 正文文字 */
     ctx.fillStyle = C.text;
     ctx.font = chosen + 'px ' + FONT;
