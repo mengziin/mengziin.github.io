@@ -9,7 +9,12 @@
   <meta name="keywords" content="<%= config.keywords %>">
   <% } %>
   <title><%= page.title ? page.title + ' · ' + config.title : config.title %></title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="stylesheet" href="<%- url_for('/fonts/lxgwwenkai-regular.css') %>">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="<%- url_for('/fonts/files/lxgwwenkai-regular-subset-118.woff2') %>">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="<%- url_for('/fonts/files/lxgwwenkai-regular-subset-119.woff2') %>">
+  <link rel="preload" as="style" href="<%- url_for('/fonts/lxgwwenkai-regular.css') %>"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="<%- url_for('/fonts/lxgwwenkai-regular.css') %>"></noscript>
   <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
 </head>

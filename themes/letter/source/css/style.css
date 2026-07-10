@@ -3,16 +3,6 @@
    设计基线：tw93/Kami — 暖色羊皮纸 + 单一墨蓝强调 + 衬线
    ============================================================ */
 
-/* ---------- 字体 ---------- */
-@font-face {
-  font-family: "TsangerJinKai";
-  src: url("/fonts/TsangerJinKai02.woff2") format("woff2"),
-       url("/fonts/TsangerJinKai02.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ---------- 设计变量 ---------- */
 :root {
   --paper:        #f5f4ed;   /* 暖色羊皮纸（画布底） */
@@ -24,7 +14,7 @@
   --code-bg:      #efece3;   /* 代码块底 */
   --line-soft:    rgba(217, 211, 196, 0.45); /* 信纸横纹 */
 
-  --serif: "TsangerJinKai", "LXGW WenKai", Charter, "Iowan Old Style", "Apple Garamond",
+  --serif: "LXGW WenKai", Charter, "Iowan Old Style", "Apple Garamond",
            Georgia, "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC",
            "SimSun", serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
