@@ -1,5 +1,5 @@
 # 信纸主题配置
-signoff: 写给你的信
+signoff: yumeng的信箱
 nav:
   - { name: 信件, link: / }
   - { name: 归档, link: /archives/ }

@@ -15,7 +15,7 @@
   var POST_TITLE = meta ? (meta.getAttribute('data-title') || '') : '';
   var POST_DATE  = meta ? (meta.getAttribute('data-date')  || '') : '';
   var POST_URL   = meta ? (meta.getAttribute('data-url')   || location.href) : location.href;
-  var SITE_NAME  = meta ? (meta.getAttribute('data-site')  || '写给你的信') : '写给你的信';
+  var SITE_NAME  = meta ? (meta.getAttribute('data-site')  || 'yumeng的信箱') : 'yumeng的信箱';
 
   /* ---------- 配色（与 style.css 变量一致） ---------- */
   var C = {
